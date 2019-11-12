@@ -1,6 +1,6 @@
 export default function (ctx, inject) {
   // Require all services in the service directory
-  const requireServices = require.context('<%= options.servicesDir %>', false, /\.(js|ts)$/)
+  const requireServices = require.context(<%= options.servicesDir %>, false, /\.(js|ts)$/)
   const servicesModules = requireServices.keys().map(fileName => {
     const builder = requireServices(fileName).default
     const name = fileName.replace(/^\.\//, '')
